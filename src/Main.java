@@ -41,7 +41,7 @@ public class Main {
     @Test
     public void test(){
         Almanac almanac=AlmanacUtil.getAlmanac();
-        System.err.println(almanac);
+        System.out.println(almanac);
 
     }
 }

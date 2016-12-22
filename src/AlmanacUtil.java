@@ -63,7 +63,10 @@ public class AlmanacUtil {
         Document document= Jsoup.parse(html);
 
         //公历时间
-        solarDate=getSolarDate();
+        //solarDate=getSolarDate();
+        Element date=document.getElementById("info_all");
+        solarDate=date.text();
+
         //农历时间
         Element eLunarDate=document.getElementById("info_nong");
         lunarDate=eLunarDate.child(0).html().substring(1,3)+eLunarDate.html().substring(11);
@@ -96,6 +99,7 @@ public class AlmanacUtil {
      * 获取公历时间,用yyyy年MM月dd日 EEEE格式表示。
      * @return yyyy年MM月dd日 EEEE
      */
+
     private static String getSolarDate() {
         Calendar calendar = Calendar.getInstance();
         Date solarDate = calendar.getTime();
